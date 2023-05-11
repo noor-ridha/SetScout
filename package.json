@@ -1,0 +1,17 @@
+{
+  "name": "moviesite",
+  "version": "1.0.0",
+  "description": "buiding movies api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Noor A.Ridha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
