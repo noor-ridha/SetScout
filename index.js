@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 //create the route
 // http method
 app.get("/", (req, res) => {
-  res
-    .status(200)
-    .json({ massege: "hello noor this is your server", app: "movies site" });
+  res.status(200).json({ massege: "Home Page", app: "movies site" });
+});
+app.get("/movie", (req, res) => {
+  res.send("single movie page");
 });
 app.post("/", (req, res) => {
   res.send("here is the post method");
