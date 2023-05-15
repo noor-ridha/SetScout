@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+require("dotenv/config");
 
 //create the route
 // http method
@@ -16,9 +17,7 @@ app.post("/", (req, res) => {
 
 // connect to mongoDB
 mongoose
-  .connect(
-    "mongodb+srv://noor:Adminnoor1000@cluster0.gxkmxat.mongodb.net/NodeApi?retryWrites=true&w=majority"
-  )
+  .connect(process.env.data)
   .then(() => {
     console.log("connected");
     const port = 3000;
