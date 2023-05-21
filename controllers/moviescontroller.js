@@ -3,7 +3,7 @@ const getMovies = (req, res) => {
 };
 
 const addMovies = (req, res) => {
-  //   console.log(req.body);
+  console.log(req.body);
   res.status(200).json({ massege: "method", app: "post" });
 };
 const updateMovies = (req, res) => {

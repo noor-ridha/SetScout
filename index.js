@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const connection = require("./config/connect");
-
+app.use(express.json());
 connection();
 
 app.use("/", require("./routes/route"));
