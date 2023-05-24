@@ -12,10 +12,10 @@ const {
   movieDelete,
 } = require("../controllers/moviescontroller");
 
-router.get("/", getMovies);
-router.post("/", addMovies);
-router.patch("/", updateMovies);
-router.delete("/", deleteMovies);
+router.get("/movies", getMovies);
+router.post("/movies", addMovies);
+router.patch("/movies", updateMovies);
+router.delete("/movies", deleteMovies);
 router.get("/:id", movieget);
 
 router.post("/:id", movieadd);
