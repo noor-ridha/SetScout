@@ -11,15 +11,16 @@ const getMovies = async (req, res) => {
 
 const addMovies = async (req, res) => {
   try {
-    const { name, language, releasedDate, picture, location } = req.body;
+    const { name, language, picture, location } = req.body;
     // if (!name || !language || releasedDate || !picture || location) {
     //   throw new Error("You missed entering one of the fields");
     // }
+    //
 
     const amovie = await movies.create({
       name,
       language,
-      releasedDate,
+
       picture,
       location,
     });
