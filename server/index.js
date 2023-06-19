@@ -5,6 +5,12 @@ const connection = require("./config/connect");
 const handleError = require("./middleware/handlerror");
 app.use(express.json());
 connection();
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 app.use("/", require("./routes/route"));
 app.use(handleError);

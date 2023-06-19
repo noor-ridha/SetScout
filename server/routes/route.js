@@ -3,8 +3,8 @@ const router = express.Router();
 const {
   getMovies,
   addMovies,
-  updateMovies,
-  deleteMovies,
+  // updateMovies,
+  // deleteMovies,
   movieget,
   movieadd,
   movieUpdate,
@@ -13,12 +13,11 @@ const {
 
 router.get("/movies", getMovies);
 router.post("/movies", addMovies);
-router.patch("/movies", updateMovies);
-router.delete("/movies", deleteMovies);
-router.get("/:id", movieget);
-
-router.post("/:id", movieadd);
-router.patch("/:id", movieUpdate);
-router.delete("/:id", movieDelete);
+// router.patch("/movies", updateMovies);
+// router.delete("/movies", deleteMovies);
+router.get("/movies/:id", movieget);
+router.post("/movies/:id", movieadd);
+router.patch("/movies/:id", movieUpdate);
+router.delete("/movies/:id", movieDelete);
 
 module.exports = router;
