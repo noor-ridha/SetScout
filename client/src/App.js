@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import Nav from "./components/pages/Nav";
+import Nav from "./components/Nav";
 import MovieBox from "./components/MovieBox";
 import { useEffect, useState } from "react";
 // import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <Nav />
-      <div>
+      <div className="grid gap-x-3 grid-cols-3 gap-y-0 justify-center">
         {movies.map((movieReq) => (
           <MovieBox key={movieReq._id} {...movieReq} />
         ))}

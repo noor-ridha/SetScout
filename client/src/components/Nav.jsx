@@ -1,5 +1,5 @@
 import React from "react";
-import set from "../../imges/sett.png";
+import set from "../imges/sett.png";
 
 const Nav = () => {
   return (
