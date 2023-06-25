@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import MovieBox from "../components/MovieBox.js";
 
 const Allmovies = () => {
@@ -28,7 +28,9 @@ const Allmovies = () => {
     <>
       <div className="grid gap-x-3 grid-cols-3 gap-y-0 justify-center">
         {movies.map((movie) => (
-          <MovieBox key={movie._id} {...movie} />
+          <Link to={`/movies/${movie._id}`} key={movie._id}>
+            <MovieBox key={movie._id} {...movie} />
+          </Link>
         ))}
       </div>
     </>
