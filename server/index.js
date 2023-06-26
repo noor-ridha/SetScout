@@ -6,7 +6,10 @@ const handleError = require("./middleware/handlerror");
 app.use(express.json());
 connection();
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://setback.onrender.com");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://setback.onrender.com/movies"
+  );
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, Patch, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
