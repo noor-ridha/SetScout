@@ -15,11 +15,11 @@ const movieSchema = mongoose.Schema({
   },
   duration: {
     type: String,
-    required: [true, "enter the location"],
+    required: [true, "enter the duration"],
   },
   cast: {
     type: String,
-    required: [true, "enter the location"],
+    required: [true, "enter the cast"],
   },
   location: {
     type: Array,
@@ -29,6 +29,10 @@ const movieSchema = mongoose.Schema({
   picture: {
     type: String,
     required: [true, "enter the picture"],
+  },
+  type: {
+    type: String,
+    required: [true, "enter the type"],
   },
 });
 

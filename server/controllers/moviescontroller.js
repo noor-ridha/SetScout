@@ -11,8 +11,16 @@ const getMovies = async (req, res) => {
 
 const addMovies = async (req, res) => {
   try {
-    const { name, language, description, duration, cast, location, picture } =
-      req.body;
+    const {
+      name,
+      language,
+      description,
+      duration,
+      cast,
+      location,
+      picture,
+      type,
+    } = req.body;
     const amovie = await movies.create({
       name,
       language,
@@ -21,6 +29,7 @@ const addMovies = async (req, res) => {
       cast,
       location,
       picture,
+      type,
     });
     res.status(200).json(amovie);
   } catch (error) {
@@ -53,7 +62,16 @@ const movieget = async (req, res) => {
 const movieadd = async (req, res) => {
   try {
     // throw an erorr if the user didn't enter some fields
-    const { name, language, releasedDate, picture } = req.body;
+    const {
+      name,
+      language,
+      description,
+      duration,
+      cast,
+      location,
+      picture,
+      type,
+    } = req.body;
     if (!name || !language || !picture) {
       // the next error massege is not in json format, it's in html format so we need to create a cutome middleware which is going to accept req res and transform the res into a json
       throw new Error("you missed entering one of the fields");
