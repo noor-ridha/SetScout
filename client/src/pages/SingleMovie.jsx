@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import OneMovie from "../components/OneMovie.jsx";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-// import { config } from "dotenv";
+// import { googleKey } from "dotenv";
 // config();
 const containerStyle = {
   width: "75%",
