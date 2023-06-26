@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import SingleMovie from "./pages/SingleMovie";
 import Allmovies from "./pages/Allmovies";
 import AllTvShows from "./pages/AllTvShows";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/movies" element={<Allmovies />} />
             <Route path="/tv" element={<AllTvShows />} />
             <Route path="/movies/:movieId" element={<SingleMovie />} />
+            <Route path="/about" element={<About />} />
           </Routes>
           {/* <Footer /> */}
         </div>
