@@ -10,8 +10,9 @@ const Allmovies = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/movies");
+        const response = await axios.get("https://setback.onrender.com/movies");
         const moviesData = response.data;
+        console.log(moviesData);
         const filteredMovies = moviesData.filter(
           (movie) => movie.type === "film"
         );

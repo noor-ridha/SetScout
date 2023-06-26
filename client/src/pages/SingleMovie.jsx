@@ -20,7 +20,7 @@ const SingleMovie = () => {
     const fetchMovie = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/movies/${movieId}`
+          `https://setback.onrender.com/movies/${movieId}`
         );
         const allData = response.data;
         // console.log(allData);

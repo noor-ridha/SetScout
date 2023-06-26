@@ -9,9 +9,9 @@ const Home = () => {
     const fetchMovie = async () => {
       try {
         const response = await axios
-          .get("http://localhost:3000/movies")
+          .get("https://setback.onrender.com/movies")
           .then((res) => {
-            // console.log(res.data);
+            console.log(res.data);
             const respo = res.data;
             setMovies(respo);
             // console.log(respo);
