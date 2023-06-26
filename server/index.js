@@ -9,7 +9,7 @@ connection();
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://setback.onrender.com/movies"
+    "https://setback.onrender.com/movies , http://localhost:3000/  "
   );
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, Patch, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(cors());
 app.use("/", require("./routes/route"));
 app.use(handleError);
-const port = 3000;
+const port = 3001;
 // the call back function will be called as soon as the server starts listening
 app.listen(port, () => {
   console.log(`your application is running on port ${port}`);
