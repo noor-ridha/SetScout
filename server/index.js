@@ -9,7 +9,7 @@ connection();
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://setback.onrender.com/movies , http://localhost:3000/  "
+    "https://setback.onrender.com , http://localhost:3000/  "
   );
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, Patch, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
