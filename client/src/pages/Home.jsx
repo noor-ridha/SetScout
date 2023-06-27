@@ -5,6 +5,7 @@ import MovieBox from "../components/MovieBox.js";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const data1 = useEffect(() => {
     const fetchMovie = async () => {
       try {
@@ -15,6 +16,7 @@ const Home = () => {
             const respo = res.data;
             setMovies(respo);
             // console.log(respo);
+            setIsLoading(false);
           });
       } catch (err) {
         console.log(err);
@@ -25,11 +27,17 @@ const Home = () => {
   return (
     <>
       <div className="grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3 ">
-        {movies.map((movie) => (
-          <Link to={`/movies/${movie._id}`} key={movie._id}>
-            <MovieBox {...movie} />
-          </Link>
-        ))}
+        {isLoading ? (
+          <p className="mt-44 items-center text-3xl font-semibold text-cyan-950">
+            loading...
+          </p>
+        ) : (
+          movies.map((movie) => (
+            <Link to={`/movies/${movie._id}`} key={movie._id}>
+              <MovieBox {...movie} />
+            </Link>
+          ))
+        )}
       </div>
     </>
   );

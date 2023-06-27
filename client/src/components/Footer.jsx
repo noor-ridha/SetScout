@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" py-8 bg-orange-200 font-poppins mt-28">
+    <div className=" py-8 bg-orange-200 font-poppins mt-80 ">
       <div className=" flex max-w-7xl mx-auto flex-col md:flex-row">
         <div className="w-3/4 md:w-1/2 mx-auto md:mx-0 text-center md:text-start mb-5 md:mb-0 pl-0 md:pl-10">
           <h1 className="text-xl font-semibold">Contact</h1>
