@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="grid gap-x-3 grid-cols-3 gap-y-0 justify-center">
+      <div className="grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3 ">
         {movies.map((movie) => (
           <Link to={`/movies/${movie._id}`} key={movie._id}>
             <MovieBox {...movie} />

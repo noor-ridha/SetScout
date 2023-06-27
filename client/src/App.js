@@ -6,6 +6,7 @@ import SingleMovie from "./pages/SingleMovie";
 import Allmovies from "./pages/Allmovies";
 import AllTvShows from "./pages/AllTvShows";
 import About from "./pages/About";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
             <Route path="/movies/:movieId" element={<SingleMovie />} />
             <Route path="/about" element={<About />} />
           </Routes>
-          {/* <Footer /> */}
         </div>
+        <Footer />
       </Router>
     </>
   );
