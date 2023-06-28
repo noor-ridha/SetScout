@@ -27,7 +27,7 @@ const Allmovies = () => {
 
   return (
     <>
-      <div className="grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-24 grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3">
         {movies.map((movie) => (
           <Link to={`/movies/${movie._id}`} key={movie._id}>
             <MovieBox key={movie._id} {...movie} />

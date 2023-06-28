@@ -1,4 +1,4 @@
-import "./App.css";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
@@ -10,10 +10,10 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-      <Router>
+    <Router>
+      <div className="flex flex-col min-h-screen">
         <Nav />
-        <div>
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Allmovies />} />
@@ -23,8 +23,8 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </Router>
-    </>
+      </div>
+    </Router>
   );
 }
 

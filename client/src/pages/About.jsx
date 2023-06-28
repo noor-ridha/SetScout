@@ -7,11 +7,15 @@ export default function About() {
     <>
       <div className="mt-28 flex justify-between">
         <div className="mt-6 mx-4">
-          <h1 className="font-sans text-4xl text-sky-700">
-            If You Are A Fan Of Exploring Filmig Site <br />
-            Then This Website Is For You
+          <h1 className="font-poppins text-4xl text-sky-700">
+            If You Are A Fan Of Exploring Filmig Site{" "}
           </h1>
-          <p className="pt-8 text-xl text-amber-600 font-mono">
+          {/* <br /> */}
+          <p className="font-poppins text-xl text-slate-600">
+            Then This Website Is For You
+          </p>
+
+          <p className="pt-8 text-xl text-slate-900 font-poppins">
             Hey I'm Noor A.Ridha and I built SetScout to helps tourists to
             dicover
             <br />
@@ -22,27 +26,6 @@ export default function About() {
             and I built this app to enable  discover Turkey through
             their tv shows
           </p> */}
-
-          <div className="flex items-start justify-center  max-w-[330px] mt-44 ">
-            <a
-              href="https://www.linkedin.com/in/noor-a-8b646824b/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 mx-8">
-                <FaLinkedinIn />
-              </div>
-            </a>
-            <a
-              href="https://github.com/noor-ridha"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 mx-4">
-                <FaGithub />
-              </div>
-            </a>
-          </div>
         </div>
 
         <div className="mx-4">

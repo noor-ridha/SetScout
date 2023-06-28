@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="mb-24 grid gap-x-3 ms:grid-cols-1 gap-y-0 justify-center md:grid-cols-2 lg:grid-cols-3 ">
         {isLoading ? (
           <p className="mt-44 items-center text-3xl font-semibold text-cyan-950">
             loading...
