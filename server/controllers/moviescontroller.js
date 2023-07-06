@@ -1,4 +1,5 @@
 const movies = require("../models/moviesModel");
+const sharp = require("sharp");
 
 const getMovies = async (req, res) => {
   try {
@@ -21,6 +22,18 @@ const addMovies = async (req, res) => {
       picture,
       type,
     } = req.body;
+
+    // Resize and compress the image
+    const resizedPictureBuffer = await sharp(picture)
+      .resize(400, 200) // Adjust the desired dimensions
+      .jpeg({ quality: 80 }) // Adjust the desired compression quality (0-100)
+      .toBuffer();
+
+    // Convert the resized image buffer to a base64-encoded string
+    const resizedPicture = `data:image/jpeg;base64,${resizedPictureBuffer.toString(
+      "base64"
+    )}`;
+
     const amovie = await movies.create({
       name,
       language,
@@ -28,28 +41,16 @@ const addMovies = async (req, res) => {
       duration,
       cast,
       location,
-      picture,
+      picture: resizedPicture, // Use the resized image in the database
       type,
     });
+
     res.status(200).json(amovie);
   } catch (error) {
     res.status(422).json({ error: error.message });
   }
 };
-// const updateMovies = async (req, res) => {
-//   try {
-//     res.status(200).json(req.body);
-//   } catch {
-//     res.status(400).json({ error: "not found" });
-//   }
-// };
-// const deleteMovies = async (req, res) => {
-//   try {
-//     res.status(200).json({ massege: "method", app: "Delete" });
-//   } catch {
-//     res.status(400).json({ error: "not found" });
-//   }
-// };
+
 const movieget = async (req, res) => {
   try {
     const { id } = req.params;
@@ -59,9 +60,9 @@ const movieget = async (req, res) => {
     res.status(400).json({ error: "not found" });
   }
 };
+
 const movieadd = async (req, res) => {
   try {
-    // throw an erorr if the user didn't enter some fields
     const {
       name,
       language,
@@ -73,15 +74,14 @@ const movieadd = async (req, res) => {
       type,
     } = req.body;
     if (!name || !language || !picture) {
-      // the next error massege is not in json format, it's in html format so we need to create a cutome middleware which is going to accept req res and transform the res into a json
       throw new Error("you missed entering one of the fields");
     }
-    res.status(200).json({ massege: `add movie for ${req.params.id}` });
+    res.status(200).json({ message: `add movie for ${req.params.id}` });
   } catch {
     res.status(400).json({ error: "not found" });
   }
 };
-// update or edit movie
+
 const movieUpdate = async (req, res) => {
   try {
     const { id } = req.params;
@@ -91,22 +91,20 @@ const movieUpdate = async (req, res) => {
     }
     const updatedMovie = await movies.findByIdAndUpdate(id, req.body);
     res.status(200).json(updatedMovie);
-    // res.status(200).json({ massege: `update movie for ${req.params.id}` });
   } catch {
-    res.status(500).json({ message: err.massege });
+    res.status(500).json({ message: err.message });
   }
 };
+
 const movieDelete = async (req, res) => {
   try {
     const { id } = req.params;
     const movie = await movies.findOneAndDelete({ _id: id });
     if (!movie) {
-      return res.status(404).json({ message: ` ${id} not fount` });
+      return res.status(404).json({ message: ` ${id} not found` });
     }
     await movies.findByIdAndDelete(id);
     res.status(200).json({ message: `${id} deleted successfully` });
-
-    // res.status(200).json({ massege: `delete movie for ${req.params.id}` });
   } catch {
     res.status(400).json({ error: "not found" });
   }
@@ -115,8 +113,6 @@ const movieDelete = async (req, res) => {
 module.exports = {
   getMovies,
   addMovies,
-  // updateMovies,
-  // deleteMovies,
   movieget,
   movieadd,
   movieUpdate,
