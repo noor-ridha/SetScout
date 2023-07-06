@@ -16,7 +16,6 @@ const movieBox = ({ name, cast, picture, duration, language }) => {
         <p>Cast : {cast}</p>
         <p>{duration}</p>
         <p>{language.charAt(0).toUpperCase() + language.slice(1)}</p>
-        {/* <p>{description}</p> */}
       </div>
     </div>
   );
