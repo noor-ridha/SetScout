@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 
 const OneMovie = ({
   name,
@@ -12,11 +13,13 @@ const OneMovie = ({
   return (
     <>
       <div className="mt-32 flex justify-normal ">
-        <img
-          className="w-128 sm:h-48 object-cover rounded-lg"
-          src={picture}
-          alt={name}
-        />
+        <LazyLoad offset={100}>
+          <img
+            alt="/"
+            className="w-full h-32 sm:h-48 object-cover rounded-lg"
+            src={picture}
+          />
+        </LazyLoad>
         <div className=" mt-4 mx-8 ">
           <span className="font-bold uppercase">{name}</span>
           <p className="font-bold">Cast: {cast}</p>
