@@ -25,11 +25,11 @@ const addMovies = async (req, res) => {
 
     // Resize and compress the image
     const resizedPictureBuffer = await sharp(picture)
-      .resize(400, 200) // Adjust the desired dimensions
-      .jpeg({ quality: 80 }) // Adjust the desired compression quality (0-100)
+      .resize(400, 200) // dimensions
+      .jpeg({ quality: 80 }) //  compression
       .toBuffer();
 
-    // Convert the resized image buffer to a base64-encoded string
+    // Convert the resized image buffer
     const resizedPicture = `data:image/jpeg;base64,${resizedPictureBuffer.toString(
       "base64"
     )}`;
@@ -41,7 +41,7 @@ const addMovies = async (req, res) => {
       duration,
       cast,
       location,
-      picture: resizedPicture, // Use the resized image in the database
+      picture: resizedPicture,
       type,
     });
 
